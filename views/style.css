@@ -1,0 +1,35 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: purple;
+}
+
+ul {
+  padding-left: 0;
+}
+li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+strong {
+  display: block;;
+}
+
+.what-you-get {
+  margin-top: 8px;
+  background-color: #F5FEE7;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.deal-title {
+  color: green;
+}

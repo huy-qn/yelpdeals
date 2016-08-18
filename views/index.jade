@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    script.
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          document.getElementById("demo").value = "Geolocation is not supported by this browser.";
+        }
+      }
+      function showPosition(position) {
+        window.location = window.location.href + 'submitUserLocation/' + 'lat/' + position.coords.latitude + '/long/' + position.coords.longitude;
+      }
+      getLocation()
+    .home
+      img(src="https://jumpshare.com/v/K89nLsHxQnQc2LEaVCpa+/poi.gif", alt="")
+      strong Getting your current location
+  //- form(action='search', method='post')
+  //-     input#demo(type='text', name='postalcode')
+  //-     |     
+  //-     input(type='submit')
+  //- ul
+  //-   each business in businesses
+  //-     li
+  //-       strong
+  //-         a(href=business['url']) #{business['name']}
+  //-       |       
+  //-       span.address #{business['location']['display_address']}
+  //-       |       
+  //-       .what-you-get
+  //-         strong What you get
+  //-         | 
+  //-         ul
+  //-           each deal in business['deals']     
+  //-             li
+  //-               p #{deal['what_you_get']}

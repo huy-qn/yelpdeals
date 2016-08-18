@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 #{title}
+  //- strong #{postalCode}
+  ul
+    each store in stores
+      li.store-item
+        strong
+          a(href=store['url'],target="_blank") #{store['name']}
+        |       
+        span.address #{store['location']['display_address']}
+        //- br
+        //- span #{store['categories']}
+        br
+        img(src=store['rating_img_url_large'], alt="")
+        |       
+        .what-you-get
+          ul
+            each deal in store['deals']     
+              li.deal-item
+                img(src=store['image_url'], alt="")
+                - var yelpText = "Print out your voucher, or redeem on your phone with the <a href=\"http://www.yelp.com/mobile?source=deal_marketing\">Yelp app</a>."
+                - var text = deal['what_you_get'].replace(yelpText, ' ')
+                .deal-text
+                  strong.deal-title #{deal['title']}
+                  p #{text}
